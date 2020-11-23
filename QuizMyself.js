@@ -4,6 +4,10 @@ var userName = readline.question("Whats your name ? ");
 
 var score = 0;
 
+var sc = score;
+
+var a =0;
+
 var chalk = require('chalk');
 
 console.log(chalk.magentaBright("WELCOME " + userName.toUpperCase() + " TO DO YOU KNOW SHAILESH ?"));
@@ -18,7 +22,7 @@ function play(question , answer){
    console.log("Your answer is: ", userAnswer)
    if (userAnswer.toUpperCase() == answer.toUpperCase()){
      console.log(chalk.green("Correct answer"))
-     score++;
+     sc++;
    } else {
      console.log(chalk.red("Oops,thats the wrong answer"))
    }
@@ -57,12 +61,6 @@ function play(question , answer){
 	}
 ];
 
- function level1(){
-  for (var i = 0; i < questionsLevel1.length;i++ ){
-  play(questionsLevel1[i].question, questionsLevel1[i].answer)
-  }
-}
-
 const questionsLevel2 = [ 
    {
 		question: `
@@ -97,12 +95,12 @@ const questionsLevel2 = [
 
 function levelUp(){
 	level1();
-    if (score >= 3){
+    if (sc >= 3){
       console.log("CONGRATS YOU HAVE ENTERED LEVEL2")
-    } else {
+	} else if(sc<3)  {
 	  console.log("Sorry,you have to try again")
-	  score = 0;
-      level1();
+	  level1();
+	  sc = a;
     }
 }
   
@@ -117,10 +115,10 @@ function levelUp(){
   }
 }
 
-for (var i =0;i<1000;i++){
+for (;;){
 	levelUp();
-	if(score>=3){
-		break;
+	if(sc>=3){
+	break;
 	}
 }
 
@@ -135,7 +133,7 @@ var highScore =
 var userScore =
   {
     name: userName,
-    scor: score
+    scor: sc
   } ;
 
 if (userScore.scor == highScore.scor){
@@ -143,5 +141,6 @@ if (userScore.scor == highScore.scor){
 } 
 
 console.log(chalk.magentaBright("THANKS " + userName.toUpperCase() +" FOR PLAYING THE QUIZ "))
-console.log("YOUR FINAL SCORE IS:",score)
+console.log("YOUR FINAL SCORE IS:",sc)
+console.log(score)
  
