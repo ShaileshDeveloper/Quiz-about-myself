@@ -63,7 +63,7 @@ function play(question , answer){
   }
 }
 
- level1();
+ 
 
 
 var user = {
@@ -104,21 +104,36 @@ const questionsLevel2 = [
 ];
 
 function levelUp(){
+	level1();
     if (user.scor >= "3"){
       console.log("CONGRATS YOU HAVE ENTERED LEVEL2")
-      level2();
     } else {
-      console.log("Sorry,you have to try again")
+	  console.log("Sorry,you have to try again")
+	  score = 0;
      level1();
     }
 }
-  levelUp();
+  
 
     function level2(){
     for (var i=0 ; i<questionsLevel2.length; i++){
     play(questionsLevel2[i].question, questionsLevel2[i].answer)
   }
 }
+    function level1(){
+    for (var i=0 ; i<questionsLevel1.length; i++){
+    play(questionsLevel1[i].question, questionsLevel1[i].answer)
+  }
+}
+
+for (var i =0;i<1000;i++){
+	levelUp();
+	if(score>=3){
+		break;
+	}
+}
+
+level2();
 
 
 
