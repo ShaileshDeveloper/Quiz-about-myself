@@ -102,7 +102,7 @@ function levelUp(){
     } else {
 	  console.log("Sorry,you have to try again")
 	  score = 0;
-     level1();
+      level1();
     }
 }
   
