@@ -63,14 +63,6 @@ function play(question , answer){
   }
 }
 
- 
-
-
-var user = {
-  name: userName,
-  scor : score
-}
-
 const questionsLevel2 = [ 
    {
 		question: `
@@ -105,7 +97,7 @@ const questionsLevel2 = [
 
 function levelUp(){
 	level1();
-    if (user.scor >= "3"){
+    if (score >= 3){
       console.log("CONGRATS YOU HAVE ENTERED LEVEL2")
     } else {
 	  console.log("Sorry,you have to try again")
@@ -114,13 +106,12 @@ function levelUp(){
     }
 }
   
-
-    function level2(){
+ function level2(){
     for (var i=0 ; i<questionsLevel2.length; i++){
     play(questionsLevel2[i].question, questionsLevel2[i].answer)
   }
 }
-    function level1(){
+ function level1(){
     for (var i=0 ; i<questionsLevel1.length; i++){
     play(questionsLevel1[i].question, questionsLevel1[i].answer)
   }
@@ -134,8 +125,6 @@ for (var i =0;i<1000;i++){
 }
 
 level2();
-
-
 
 var highScore = 
 {
@@ -152,8 +141,6 @@ var userScore =
 if (userScore.scor == highScore.scor){
   console.log("YOU HAVE BEATEN THE HIGH SCORE")
 } 
-
-
 
 console.log(chalk.magentaBright("THANKS " + userName.toUpperCase() +" FOR PLAYING THE QUIZ "))
 console.log("YOUR FINAL SCORE IS:",score)
