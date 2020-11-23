@@ -96,11 +96,12 @@ const questionsLevel2 = [
 function levelUp(){
 	level1();
     if (sc >= 3){
-      console.log("CONGRATS YOU HAVE ENTERED LEVEL2")
+      console.log(chalk.magentaBright("CONGRATS YOU HAVE ENTERED LEVEL2"))
 	} else if(sc<3)  {
-	  console.log("Sorry,you have to try again")
-	  level1();
+	  console.log(chalk.redBright("SORRY YOU HAVE TO TRY AGAIN"))
 	  sc = a;
+	  level1();
+	  
     }
 }
   
@@ -121,7 +122,6 @@ for (;;){
 	break;
 	}
 }
-
 level2();
 
 var highScore = 
@@ -141,6 +141,6 @@ if (userScore.scor == highScore.scor){
 } 
 
 console.log(chalk.magentaBright("THANKS " + userName.toUpperCase() +" FOR PLAYING THE QUIZ "))
-console.log("YOUR FINAL SCORE IS:",sc)
+console.log("YOUR FINAL SCORE IS:",chalk.yellowBright(sc))
 console.log(score)
  
